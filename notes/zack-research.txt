@@ -252,9 +252,33 @@ https://docs.python-guide.org/writing/structure/
 
 04/05/2019
 
--dictionaries
+Dictionaries
 
 https://www.youtube.com/watch?v=ZEZdys-fHDw
+https://realpython.com/python-dicts/
+
+-dictionaries in python are data structures known as an associative array.
+-they consist of key value pairs, each key is paired to an associated value.
+d = {
+    <key>: <value>,
+    <key>: <value>,
+      .
+      .
+    <key>: <value>
+}
+-once a dictionary is defined, values can be displayed same as a list,
+ex: d[<key>] the result will be 'value'
+
+-if a key referred to is not in the dictionary it will print KeyError: 'key'
+-you can add and override dictionary values.
+ex: d[<existing key>] = 'new value'
+d[<new key>] will result 'new value'
+
+-to delete entries enter del d[<key>]
+-dictionaries can be used to call methods using the return value.
+ex: self.const_tag_dict[tag](self, bits)
+-self.const_tag_dict[tag] is replaced by the value returned from the dictionary
+and a normal method call is made value(self, argument).
 
 04/17/2019
 
@@ -283,3 +307,117 @@ Exponent represents positive and negative numbers. A bias is in place (127) to t
 actual exponent, an exponent of 50 will be 177 (177-127=50).
 
 Mantissa is assumed to be 1, making it 1.f, where f is the field of fraction bits.
+
+04/24/2019
+
+Requirements files
+
+-During the installation process many libraries are needed to run the program.
+-Travis installation requires the names of libraries used in the program to run.
+-Either a requirnments.txt file and a command pip install -r requirements.txt
+is necessary or pip install {name of library} for every library.
+-The requirements.txt file will contain a list of packages needed to be installed.
+ex:
+codecov
+numpy
+coverage
+bitstring
+
+-having a requirements file makes it easy to add packages and keep them in one place.
+
+05/01/2019
+
+https://www.pythonforbeginners.com/system/python-sys-argv
+
+Enabling command line arguments
+
+-Command line arguments is a list of arguments the python program requires.
+-It is stored as an array and can be called in the program so when you run
+python {program name}.py, specific inputs after .py is required.
+-to use it you must first import sys, since the sys.argv is saved as an array
+the [0] index is the program_name [1] is where the first arguments is saved.
+
+To run it, simple type:
+
+>python ex.py
+Argument:  ex.py
+
+>python ex.py hello
+Argument:  ex.py
+Argument:  hello
+
+>python ex.py hello world
+Argument:  ex.py
+Argument:  hello
+Argument:  world
+
+05/03/2017
+
+https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
+
+README.md file structure and template
+-readme files are used to give instruction to create a development environment,
+and help anyone accessing the repo understand what it's doing.
+-readme file should include anything the developer should know, or should read
+before using the repository.
+-should include how users can help with the project if it is an open source project.
+-the readme file is automatically surfaced by Github.
+-readme.md .md extension generates a html summary so it may be seen at the bottom
+of the project on Github for example.
+
+#Project Title
+One Paragraph of project description goes here
+
+##Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+##Prerequisites
+What things you need to install the software and how to install them
+
+##Give examples
+Installing
+A step by step series of examples that tell you how to get a development env running
+
+Say what the step will be
+
+##Give the example
+And repeat
+
+until finished
+End with an example of getting some data out of the system or using it for a little demo
+
+##Running the tests
+Explain how to run the automated tests for this system
+
+##Break down into end to end tests
+Explain what these tests test and why
+
+##Give an example
+And coding style tests
+Explain what these tests test and why
+
+##Give an example
+Deployment
+Add additional notes about how to deploy this on a live system
+
+##Built With
+Dropwizard - The web framework used
+Maven - Dependency Management
+ROME - Used to generate RSS Feeds
+Contributing
+Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
+
+##Versioning
+We use SemVer for versioning. For the versions available, see the tags on this repository.
+
+##Authors
+Billie Thompson - Initial work - PurpleBooth
+See also the list of contributors who participated in this project.
+
+##License
+This project is licensed under the MIT License - see the LICENSE.md file for details
+
+##Acknowledgments
+Hat tip to anyone whose code was used
+Inspiration
+etc
