@@ -1,0 +1,49 @@
+Effective Java - second edition notes
+
+Chapter 1
+
+-the nook captures rules generally held benefitial by the most experienced programmers.
+-most rules derive from few fundamental principles. clarity and simplicity are most important.
+-code should be reused rather than copied. modules should be written as small as pissible.
+-learning to program means learning the rules, then learning when to break them.
+-programs should be clear, correct, usable, robust, flexible and maintainable.
+-exported API or API refers to the interface, constructors, members of the class.
+-they exist outside the class and are exported by the author to suport the client (user).
+
+Chapter 2
+
+-creating an destroying objects, when to create them, when to destroy them, and how to
+manage them.
+-the best way to allow a client to obtain an instance of it is to provide a public
+constructor.
+-public static factory method is a static method that returns an instance of the class.
+it provides the client with variable names, unlike the constructor.
+
+example: BigInteger(int, int, Random) returns a BigInteger
+static facotry method: BigInteger.probablePrime
+
+-static facotory methods do not require to create new objects each time it is invoked.
+-they can return an object of any subtype of the return type, able to return objects
+without making them public. hiding implementation classes, creating a compact API.
+-three componenets of a service provider framework: a service interface, a provider
+registration API, and a service access API (clients use to access an instance of the service).
+
+Chapter 3
+
+-how to override the nonfinal Object methods.
+-overriding the equals method should be done at seldom as it is easy to get wrong.
+-it is appropraite to override equals when a class has a logical equality that differs
+from objects identity. for example value classes that represent Integer or Date.
+in order to find out if values are logically equivalent and not whether they refer
+to the same object.
+-when oberriding the equals methoda general contact must be adhered to:
+-reflexive; for any non-null reference value x, x.equals(x) must return true.
+-symmetric; ffor any non-null reference values x and y, x.equals(y) must return true
+if and only if y.equals(x) returns true.
+-transitive; for any non-null reference values x, y, z, if x.equls(y) retuns true
+and y.equals(z) returns true, then x.equals(z) must return true.
+-consistent; for any non-null refernce values x and y, multiple inovations of x.equals(y)
+consistently return true or consistently return false, provided no information used
+in equals comparisons on the objects is modified.
+-non-nullity; for any non-null reference value x, x.equals(null) must return false.
+-classes depend on the objects passing through them obey the equals contract.
